@@ -27,16 +27,10 @@
       { 
         e.preventDefault(); 
       };
-            
-      function debug(value) {
-        console.log('==> ' + value);
-      };
 
       document.addEventListener("touchmove", preventBehavior, false);
       
       function onPhotoURISuccess(imageURI) {
-        debug("Image URL " + imageURI);
-        
         var largeImage = $("#image > img").get(0);
 
         largeImage.style.display = 'block';
@@ -47,9 +41,7 @@
         alert('Failed because: ' + message);
       };
       
-      function getPhoto(source) {
-        debug('Getting photo..');
-        
+      function getPhoto(source) {}
         // Retrieve image file location from specified source
         navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100, 
 	        destinationType: destinationType.FILE_URI,
@@ -69,7 +61,6 @@
       function onBodyLoad()
       {		
         document.addEventListener("deviceready", onDeviceReady, false);
-		debug('onLoad...');
       };
       
       /* When this function is called, PhoneGap has been initialized and is ready to roll */
@@ -84,10 +75,8 @@
         // do your thing!
         navigator.notification.alert("PhoneGap is working")
         $("#gallery").tap(function(e) {
-			navigator.notification.alert("Loading");
 	        e.preventDefault();
 	        e.stopPropagation();
-	        debug('Loading picture from album');
 	        getPhoto(pictureSource.SAVEDPHOTOALBUM);
 	     });
       };
