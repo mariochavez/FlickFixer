@@ -31,6 +31,7 @@
       function debug(value) {
         console.log('==> ' + value);
       };
+
       document.addEventListener("touchmove", preventBehavior, false);
       
       function onPhotoURISuccess(imageURI) {
@@ -40,9 +41,6 @@
 
         largeImage.style.display = 'block';
         largeImage.src = imageURI;
-        
-        debug('Getting exif data');
-        $("#info").text(EXIF.findEXIFinJPEG(imageURI));
       }
       
       function onFail(message) {
@@ -54,10 +52,9 @@
         
         // Retrieve image file location from specified source
         navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100, 
-                                    destinationType: destinationType.FILE_URI,
-                                    sourceType: source });
-      }
-
+	        destinationType: destinationType.FILE_URI,
+	        sourceType: source });
+      };
       
       /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
       see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
@@ -72,7 +69,7 @@
       function onBodyLoad()
       {		
         document.addEventListener("deviceready", onDeviceReady, false);
-      }
+      };
       
       /* When this function is called, PhoneGap has been initialized and is ready to roll */
       /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
@@ -86,14 +83,12 @@
         // do your thing!
         // navigator.notification.alert("PhoneGap is working")
         $("#gallery").tap(function(e) {
-                          
-                          e.preventDefault();
-                          e.stopPropagation();
-                          debug('Loading picture from album');
-                          getPhoto(pictureSource.SAVEDPHOTOALBUM);
-                          });
+	        e.preventDefault();
+	        e.stopPropagation();
+	        debug('Loading picture from album');
+	        getPhoto(pictureSource.SAVEDPHOTOALBUM);
+	     });
       }
-      
     </script>
   </head>
   <body onload="onBodyLoad()">
