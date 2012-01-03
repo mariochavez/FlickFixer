@@ -82,13 +82,13 @@
         
         // do your thing!
         navigator.notification.alert("PhoneGap is working")
-        $("#gallery".tap(function(e) {
+        $("#gallery").tap(function(e) {
 			navigator.notification.alert("Loading");
 	        e.preventDefault();
 	        e.stopPropagation();
 	        debug('Loading picture from album');
 	        getPhoto(pictureSource.SAVEDPHOTOALBUM);
-	     }));
+	     });
       }
     </script>
   </head>
