@@ -41,11 +41,11 @@
 
         largeImage.style.display = 'block';
         largeImage.src = imageURI;
-      }
+      };
       
       function onFail(message) {
         alert('Failed because: ' + message);
-      }
+      };
       
       function getPhoto(source) {
         debug('Getting photo..');
@@ -89,7 +89,7 @@
 	        debug('Loading picture from album');
 	        getPhoto(pictureSource.SAVEDPHOTOALBUM);
 	     });
-      }
+      };
     </script>
   </head>
   <body onload="onBodyLoad()">
