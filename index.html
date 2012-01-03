@@ -41,7 +41,7 @@
         alert('Failed because: ' + message);
       };
       
-      function getPhoto(source) {}
+      function getPhoto(source) {
         // Retrieve image file location from specified source
         navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100, 
 	        destinationType: destinationType.FILE_URI,
