@@ -2,9 +2,9 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.phonegap.flickfixer"
-    version     = "1.0.3">
+    version     = "1.0.4">
 
-    <name>PhoneGap: FlickFixer</name>
+    <name>FlickFixer</name>
 
     <description>
         An image inspector
