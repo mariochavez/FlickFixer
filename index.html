@@ -77,12 +77,13 @@
       for more details -jm */
       function onDeviceReady()
       {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
+        pictureSource = navigator.camera.PictureSourceType;
+        destinationType = navigator.camera.DestinationType;
         
         // do your thing!
         // navigator.notification.alert("PhoneGap is working")
-        $("#gallery").tap(function(e) {
+        $("#gallery".tap(function(e) {
+			navigator.notification.alert("Loading");
 	        e.preventDefault();
 	        e.stopPropagation();
 	        debug('Loading picture from album');
